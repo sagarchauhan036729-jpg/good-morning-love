@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Morning ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #ffdde1,
+        #ee9ca7,
+        #fbc2eb
+    );
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    padding:40px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    border-radius:25px;
+    color:white;
+    width:90%;
+    max-width:700px;
+    animation:fadeIn 2s ease;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:20px;
+    animation:float 3s infinite ease-in-out;
+}
+
+.message{
+    font-size:1.3rem;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.quote{
+    font-style:italic;
+    font-size:1.1rem;
+    color:#fff7f7;
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    animation:fall linear infinite;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-100px);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>☀️ Good Morning My Love ❤️</h1>
+
+    <div class="message">
+        Every morning feels beautiful because I know you exist.
+        May your day be filled with happiness, smiles, success,
+        and endless reasons to feel special. 💖
+    </div>
+
+    <div class="quote">
+        "You are the first thought in my morning and the sweetest dream at night."
+    </div>
+
+    <br>
+
+    <div class="quote">
+        "Every sunrise reminds me how lucky I am to have you in my life." 🌹
+    </div>
+</div>
+
+<script>
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*20+15+"px";
+    heart.style.animationDuration=Math.random()*4+4+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
